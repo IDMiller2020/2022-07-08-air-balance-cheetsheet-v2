@@ -2,6 +2,7 @@ const app = Vue.createApp({})
 app.component('duct-calculators', {
   template: `
   <h2>Duct Calculations</h2>
+
   <calculator
     v-for="calculator in ductCalculators"
       v-bind:calculatorName="calculator.name"
@@ -9,6 +10,7 @@ app.component('duct-calculators', {
       v-bind:calculation="calculator.methodCall"
       v-bind:calculatorOutput="calculator.output"
   />
+  <hr>
   <h2>Air Flow Calculations</h2>
   <calculator
     v-for="calculator in airCalculators"
@@ -125,9 +127,9 @@ app.component('calculator',{
     />
     <button>Calculate</button>
   </form>
-  <div :id=calculation>
-    <p>{{ calculatorOutput }}</p>
-  </div>
+ 
+  <p :id=calculation class="answer">{{ calculatorOutput }}</p>
+ 
   `,
   methods: {
     calculateResult(calculation) {
