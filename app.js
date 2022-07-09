@@ -15,7 +15,7 @@ app.component('duct-calculators', {
       v-bind:calculatorName="calculator.name"
       v-bind:calculatorInputs="calculator.inputs"
       v-bind:calculation="calculator.methodCall"
-    v  -bind:calculatorOutput="calculator.output"
+      v-bind:calculatorOutput="calculator.output"
   />
   `,
   data() {
