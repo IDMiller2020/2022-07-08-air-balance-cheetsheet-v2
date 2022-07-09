@@ -64,18 +64,40 @@ app.component('duct-calculators', {
           name: 'New Static Pressure From Old cfm and New cfm',
           inputs: [
             {
-              label: 'New CFM (Desired CFM)',
+              label: 'New cfm (Desired cfm)',
               inputValue: 0,
               unit: 'cfm'
             },
             {
-              label: 'Old CFM',
+              label: 'Old cfm',
               inputValue: 0,
               unit: 'cfm'
             },
           ],
           methodCall: 'cfmToStatic',
           output: 'in WC ='
+        },
+        {
+          name: 'New (Desired) rpm From Old and New (Desired) cfm and old Fan rpm',
+          inputs: [
+            {
+              label: 'Old rpm',
+              inputValue: 0,
+              unit: 'rpm'
+            },
+            {
+              label: 'Old Fan cfm',
+              inputValue: 0,
+              unit: 'cfm'
+            },
+            {
+              label: 'New Fan cfm',
+              inputValue: 0,
+              unit: 'cfm'
+            }
+          ],
+          methodCall: 'rpmToCfm',
+          output: 'rpm ='
         }
       ]
     }
@@ -119,7 +141,11 @@ app.component('calculator',{
         const newStatic = Math.pow(cfmRatio, 2)
         let answerText = document.getElementById('cfmToStatic')
         answerText.innerText = 'in WC = ' + newStatic.toFixed(5)
-      }else {
+      } else if (calculation === 'rpmToCfm') {
+        const newRpm = (this.calculatorInputs[2].inputValue / this.calculatorInputs[1].inputValue) * this.calculatorInputs[0].inputValue
+        const answerText = document.getElementById('rpmToCfm')
+        answerText.innerText = 'rpm = ' + newRpm.toFixed(5)
+      } else {
         console.log('huh? Whats that? error... error... error...')
       }
     },
