@@ -91,7 +91,7 @@ app.component('duct-calculators', {
               unit: 'cfm'
             },
             {
-              label: 'New Fan cfm',
+              label: 'New (Desired) Fan cfm',
               inputValue: 0,
               unit: 'cfm'
             }
