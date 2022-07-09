@@ -59,6 +59,23 @@ app.component('duct-calculators', {
           ],
           methodCall: 'fpmToCfm',
           output: 'cfm ='
+        },
+        {
+          name: 'New Static Pressure From Old cfm and New cfm',
+          inputs: [
+            {
+              label: 'New CFM (Desired CFM)',
+              inputValue: 0,
+              unit: 'cfm'
+            },
+            {
+              label: 'Old CFM',
+              inputValue: 0,
+              unit: 'cfm'
+            },
+          ],
+          methodCall: 'cfmToStatic',
+          output: 'in WC ='
         }
       ]
     }
@@ -97,7 +114,12 @@ app.component('calculator',{
         const cfm = (this.calculatorInputs[0].inputValue * this.calculatorInputs[1].inputValue)
         let answerText = document.getElementById('fpmToCfm')
         answerText.innerText = 'cfm = ' + cfm.toFixed(5)
-      } else {
+      } else if (calculation === 'cfmToStatic') {
+        const cfmRatio = this.calculatorInputs[0].inputValue / this.calculatorInputs[1].inputValue
+        const newStatic = Math.pow(cfmRatio, 2)
+        let answerText = document.getElementById('cfmToStatic')
+        answerText.innerText = 'in WC = ' + newStatic.toFixed(5)
+      }else {
         console.log('huh? Whats that? error... error... error...')
       }
     },
