@@ -1,19 +1,26 @@
 const app = Vue.createApp({})
 app.component('duct-calculators', {
   template: `
-  <h1>{{ title }}</h1>
+  <h2>Duct Calculations</h2>
   <calculator
-    v-for="calculator in calculators"
+    v-for="calculator in ductCalculators"
       v-bind:calculatorName="calculator.name"
       v-bind:calculatorInputs="calculator.inputs"
       v-bind:calculation="calculator.methodCall"
       v-bind:calculatorOutput="calculator.output"
   />
+  <h2>Air Flow Calculations</h2>
+  <calculator
+    v-for="calculator in airCalculators"
+      v-bind:calculatorName="calculator.name"
+      v-bind:calculatorInputs="calculator.inputs"
+      v-bind:calculation="calculator.methodCall"
+    v  -bind:calculatorOutput="calculator.output"
+  />
   `,
   data() {
     return {
-      title: 'Duct Calculations',
-      calculators: [
+      ductCalculators: [
         {
           name: 'Round Duct Cross-Sectional Area',
           inputs: [
@@ -42,7 +49,9 @@ app.component('duct-calculators', {
           ],
           methodCall: 'rectangularArea',
           output: 'sq ft ='
-        },
+        }
+      ],
+      airCalculators: [
         {
           name: 'Feet Per Minute (fpm) to Cubic Feet Per Minute (cfm)',
           inputs: [
