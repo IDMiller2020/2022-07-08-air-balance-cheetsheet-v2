@@ -72,7 +72,7 @@ app.component('duct-calculators', {
           output: 'cfm ='
         },
         {
-          name: 'New Static Pressure From Old cfm and New cfm',
+          name: 'New Static Pressure (sp) From Old and new rpm and old sp',
           inputs: [
             {
               label: 'New cfm (Desired cfm)',
@@ -84,6 +84,11 @@ app.component('duct-calculators', {
               inputValue: 0,
               unit: 'cfm'
             },
+            {
+              label: 'Old sp',
+              inputValue: 0,
+              unit: 'in WC'
+            }
           ],
           methodCall: 'cfmToStatic',
           output: 'in WC ='
@@ -117,8 +122,8 @@ app.component('duct-calculators', {
 })
 app.component('calculator',{
   template: `
+  <h4>{{ calculatorName }}</h4>
   <form v-on:submit.prevent="calculateResult(calculation)">
-    <h4>{{ calculatorName }}</h4>
     <calculator-inputs
       v-for="input in calculatorInputs"
         v-bind:calculatorInputLabel="input.label"
@@ -149,7 +154,8 @@ app.component('calculator',{
         answerText.innerText = 'cfm = ' + cfm.toFixed(5)
       } else if (calculation === 'cfmToStatic') {
         const cfmRatio = this.calculatorInputs[0].inputValue / this.calculatorInputs[1].inputValue
-        const newStatic = Math.pow(cfmRatio, 2)
+        const cfmSquare = Math.pow(cfmRatio, 2)
+        const newStatic = cfmSquare * this.calculatorInputs[2].inputValue
         let answerText = document.getElementById('cfmToStatic')
         answerText.innerText = 'in WC = ' + newStatic.toFixed(5)
       } else if (calculation === 'rpmToCfm') {
@@ -176,10 +182,10 @@ app.component('calculator',{
 })
 app.component('calculator-inputs', {
   template: `
-    <label>
-      <p>{{ calculatorInputLabel }}
-      (<em>{{ unitInfo }}</em>)
-      <input type="number" step="any" v-model="calculatorInputValue" /></p>
+      <label>
+        <p>{{ calculatorInputLabel }}
+        (<em>{{ unitInfo }}</em>)</p>
+        <p><input type="number" step="any" v-model="calculatorInputValue" /></p>
     </label>
   `,
   computed: {

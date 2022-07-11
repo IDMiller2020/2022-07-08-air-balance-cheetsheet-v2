@@ -21,6 +21,17 @@ h2 {
   justify-content: center;
 }
 
+form {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
 input {
   width: 60px;
 }
