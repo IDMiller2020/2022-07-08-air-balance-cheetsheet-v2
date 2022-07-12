@@ -21,24 +21,50 @@ h2 {
   justify-content: center;
 }
 
+p {
+  margin-left: 6px;
+}
+
+button {
+  height: 30px;
+  width: 252px;
+  font-size: 0.75rem;
+  margin: 10px 0;
+}
+
 form {
-  width: 350px;
   display: flex;
   flex-direction: column;
+}
+
+.inputs-container {
+  border: 1px solid gray;
+  border-radius: 2px;
+  width: 250px;
 }
 
 label {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 input {
   width: 60px;
+  margin-right: 6px;
 }
 
 .answer {
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   color: darkgreen;
+  background-color: lightgreen;
+  border: 1px solid darkgreen;
+  border-radius: 3px;
+  width: 245px;
+  height: 40px;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin: 0  0 50px 0;
+  padding: 0 0 0 5px;
 }

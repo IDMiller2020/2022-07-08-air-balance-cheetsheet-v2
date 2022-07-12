@@ -124,12 +124,14 @@ app.component('calculator',{
   template: `
   <h4>{{ calculatorName }}</h4>
   <form v-on:submit.prevent="calculateResult(calculation)">
-    <calculator-inputs
-      v-for="input in calculatorInputs"
-        v-bind:calculatorInputLabel="input.label"
-        v-bind:unitInfo="input.unit"
-        v-model="input.inputValue"
-    />
+    <div class="inputs-container">
+      <calculator-inputs
+        v-for="input in calculatorInputs"
+          v-bind:calculatorInputLabel="input.label"
+          v-bind:unitInfo="input.unit"
+          v-model="input.inputValue"
+      />
+    </div>
     <button>Calculate</button>
   </form>
  
@@ -185,7 +187,7 @@ app.component('calculator-inputs', {
       <label>
         <p>{{ calculatorInputLabel }}
         (<em>{{ unitInfo }}</em>)</p>
-        <p><input type="number" step="any" v-model="calculatorInputValue" /></p>
+        <input type="number" step="any" v-model="calculatorInputValue" />
     </label>
   `,
   computed: {
