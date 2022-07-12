@@ -2,7 +2,6 @@ const app = Vue.createApp({})
 app.component('duct-calculators', {
   template: `
   <h2>Duct Calculations</h2>
-
   <calculator
     v-for="calculator in ductCalculators"
       v-bind:calculatorName="calculator.name"
@@ -72,7 +71,7 @@ app.component('duct-calculators', {
           output: 'cfm ='
         },
         {
-          name: 'New Static Pressure (sp) From Old and new rpm and old sp',
+          name: 'Calculate new sp',
           inputs: [
             {
               label: 'New cfm (Desired cfm)',
@@ -94,7 +93,7 @@ app.component('duct-calculators', {
           output: 'in WC ='
         },
         {
-          name: 'New (Desired) rpm From Old and New (Desired) cfm and old Fan rpm',
+          name: 'Calculate new rpm for desired cfm.',
           inputs: [
             {
               label: 'Old rpm',
@@ -134,9 +133,9 @@ app.component('calculator',{
     </div>
     <button>Calculate</button>
   </form>
- 
-  <p :id=calculation class="answer">{{ calculatorOutput }}</p>
- 
+  <div class="answer-container">
+    <p :id=calculation class="answer-text">{{ calculatorOutput }}</p>
+  </div>
   `,
   methods: {
     calculateResult(calculation) {

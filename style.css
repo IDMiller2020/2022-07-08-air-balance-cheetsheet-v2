@@ -14,9 +14,15 @@ html {
 body {
   font-family: 'Roboto Condensed';
   font-size: 0.75rem;
+  background-color: rgb(245, 245, 245);
 }
 
 h2 {
+  display: flex;
+  justify-content: center;
+}
+
+h4 {
   display: flex;
   justify-content: center;
 }
@@ -26,8 +32,11 @@ p {
 }
 
 button {
+  background-color: rgb(235, 235, 235);
   height: 30px;
   width: 252px;
+  border: 1px solid gray;
+  border-radius: 3px;
   font-size: 0.75rem;
   margin: 10px 0;
 }
@@ -35,11 +44,13 @@ button {
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .inputs-container {
   border: 1px solid gray;
-  border-radius: 2px;
+  background-color: white;
+  border-radius: 3px;
   width: 250px;
 }
 
@@ -52,9 +63,16 @@ label {
 input {
   width: 60px;
   margin-right: 6px;
+  border-radius: 3px;
+  background-color: #FFFF66;
 }
 
-.answer {
+.answer-container {
+  display: flex;
+  justify-content: center;
+}
+
+.answer-text {
   display: flex;
   align-items: center;
   font-size: 1rem;
