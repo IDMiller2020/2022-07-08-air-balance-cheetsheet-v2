@@ -14,17 +14,21 @@ html {
 body {
   font-family: 'Roboto Condensed';
   font-size: 0.75rem;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(28, 28, 28);
 }
 
 h2 {
   display: flex;
   justify-content: center;
+  font-size: 2rem;
+  color: #f4f4f4
 }
 
 h4 {
   display: flex;
   justify-content: center;
+  font-size: 1rem;
+  color: #f4f4f4;
 }
 
 p {
@@ -32,10 +36,10 @@ p {
 }
 
 button {
-  background-color: rgb(235, 235, 235);
+  background-color: #d2d2d2;
   height: 30px;
   width: 252px;
-  border: 1px solid gray;
+  border: 1px solid #f4f4f4;
   border-radius: 3px;
   font-size: 0.75rem;
   margin: 10px 0;
@@ -48,8 +52,8 @@ form {
 }
 
 .inputs-container {
-  border: 1px solid gray;
-  background-color: white;
+  border: 1px solid #f4f4f4;
+  background-color: #f4f4f4;
   border-radius: 3px;
   width: 250px;
 }
@@ -64,7 +68,8 @@ input {
   width: 60px;
   margin-right: 6px;
   border-radius: 3px;
-  background-color: #FFFF66;
+  color: #f4f4f4;
+  background-color: #EF0107;
 }
 
 .answer-container {
@@ -76,11 +81,10 @@ input {
   display: flex;
   align-items: center;
   font-size: 1rem;
-  color: darkgreen;
-  background-color: lightgreen;
-  border: 1px solid darkgreen;
+  color: #f4f4f4;
+  background-color: #007FFF;
   border-radius: 3px;
-  width: 245px;
+  width: 247px;
   height: 40px;
   font-weight: 700;
   margin: 0  0 50px 0;

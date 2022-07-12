@@ -54,7 +54,7 @@ app.component('duct-calculators', {
       ],
       airCalculators: [
         {
-          name: 'Feet Per Minute (fpm) to Cubic Feet Per Minute (cfm)',
+          name: 'Calculate cfm from fpm.',
           inputs: [
             {
               label: 'Velocity',
