@@ -71,7 +71,7 @@ app.component('duct-calculators', {
           output: 'cfm ='
         },
         {
-          name: 'Calculate new sp for desired cfm.',
+          name: 'Calculate sp for desired cfm.',
           inputs: [
             {
               label: 'Desired cfm',
@@ -93,7 +93,7 @@ app.component('duct-calculators', {
           output: 'in WC ='
         },
         {
-          name: 'Calculate new rpm for desired cfm.',
+          name: 'Calculate rpm for desired cfm.',
           inputs: [
             {
               label: 'Old rpm',

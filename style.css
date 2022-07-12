@@ -14,21 +14,21 @@ html {
 body {
   font-family: 'Roboto Condensed';
   font-size: 0.75rem;
-  background-color: rgb(28, 28, 28);
+  background-color: #252525;
 }
 
 h2 {
   display: flex;
   justify-content: center;
   font-size: 2rem;
-  color: #f4f4f4
+  color: #ececec
 }
 
 h4 {
   display: flex;
   justify-content: center;
   font-size: 1rem;
-  color: #f4f4f4;
+  color: #ececec;
 }
 
 p {
@@ -36,13 +36,17 @@ p {
 }
 
 button {
-  background-color: #d2d2d2;
+  background-color: #c4c4c4;
   height: 30px;
   width: 252px;
-  border: 1px solid #f4f4f4;
+  border: 1px solid #ececec;
   border-radius: 3px;
   font-size: 0.75rem;
   margin: 10px 0;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 form {
@@ -52,8 +56,8 @@ form {
 }
 
 .inputs-container {
-  border: 1px solid #f4f4f4;
-  background-color: #f4f4f4;
+  border: 1px solid #ececec;
+  background-color: #ececec;
   border-radius: 3px;
   width: 250px;
 }
@@ -68,8 +72,8 @@ input {
   width: 60px;
   margin-right: 6px;
   border-radius: 3px;
-  color: #f4f4f4;
-  background-color: #EF0107;
+  color: #ececec;
+  background-color: #e30009;
 }
 
 .answer-container {
@@ -80,9 +84,9 @@ input {
 .answer-text {
   display: flex;
   align-items: center;
-  font-size: 1rem;
-  color: #f4f4f4;
-  background-color: #007FFF;
+  font-size: 1.2rem;
+  color: #ececec;
+  background-color: #00abfd;
   border-radius: 3px;
   width: 247px;
   height: 40px;
