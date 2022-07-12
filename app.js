@@ -71,10 +71,10 @@ app.component('duct-calculators', {
           output: 'cfm ='
         },
         {
-          name: 'Calculate new sp',
+          name: 'Calculate new sp for desired cfm.',
           inputs: [
             {
-              label: 'New cfm (Desired cfm)',
+              label: 'Desired cfm',
               inputValue: 0,
               unit: 'cfm'
             },
@@ -101,12 +101,12 @@ app.component('duct-calculators', {
               unit: 'rpm'
             },
             {
-              label: 'Old Fan cfm',
+              label: 'Old cfm',
               inputValue: 0,
               unit: 'cfm'
             },
             {
-              label: 'New (Desired) Fan cfm',
+              label: 'Desired cfm',
               inputValue: 0,
               unit: 'cfm'
             }
