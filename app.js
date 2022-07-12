@@ -113,6 +113,28 @@ app.component('duct-calculators', {
           ],
           methodCall: 'rpmToCfm',
           output: 'rpm ='
+        },
+        {
+          name: 'Calculate amp for new cfm',
+          inputs: [
+            {
+              label: 'Old amp',
+              inputValue: 0,
+              unit: 'amp'
+            },
+            {
+              label: 'New cfm',
+              inputValue: 0,
+              unit: 'cfm'
+            },
+            {
+              label: 'Old cfm',
+              inputValue: 0,
+              unit: 'cfm'
+            }
+          ],
+          methodCall: 'cfmToAmp',
+          output: 'amp ='
         }
       ]
     }
@@ -163,6 +185,12 @@ app.component('calculator',{
         const newRpm = (this.calculatorInputs[2].inputValue / this.calculatorInputs[1].inputValue) * this.calculatorInputs[0].inputValue
         const answerText = document.getElementById('rpmToCfm')
         answerText.innerText = 'rpm = ' + newRpm.toFixed(5)
+      } else if (calculation === 'cfmToAmp') {
+        const cfmRatio = this.calculatorInputs[1].inputValue / this.calculatorInputs[2].inputValue
+        const cfmCube = Math.pow(cfmRatio, 3)
+        const newAmp = cfmCube * this.calculatorInputs[0].inputValue
+        let answerText = document.getElementById('cfmToAmp')
+        answerText.innerText = 'amp = ' + newAmp.toFixed(5)
       } else {
         console.log('huh? Whats that? error... error... error...')
       }
